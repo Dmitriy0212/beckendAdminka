@@ -54,6 +54,18 @@ app.get('/author/posts/blog/download/img', (req, res) => {
     getRecipePhoto(req)
 });
 
+app.get('/author/posts/blog/links/img', (req, res) => {
+    const getRecipePhoto = (req) => {
+        try {
+            const filePath = path.join(__dirname + "/staticimg", String(req.query.id) + ".svg");
+            res.sendFile(filePath);
+        } catch (e) {
+            console.log(e)
+        }
+    }
+    getRecipePhoto(req)
+});
+
 app.listen(PORT, () => {
     console.log(`Server run: http://${HOST}:${PORT}`)
 });

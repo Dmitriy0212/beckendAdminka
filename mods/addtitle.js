@@ -7,7 +7,7 @@ export function addTitle(body) {
         const text = JSON.parse(fs.readFileSync('./basa/basejson.json', 'utf8'));
         let copy = Object.assign([], text);
         const doc = {
-            image: `http://localhost:8080/author/posts/blog/download/img?id=${a}`,
+            image: `https://sleepy-plateau-27607-ec90ed518680.herokuapp.com/author/posts/blog/download/img?id=${a}`,
             name: body.name,
             skills: body.skills,
             description: body.description,

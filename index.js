@@ -36,10 +36,11 @@ export const HOST = process.env.HOST ||'localhost';
 
 app.post('/author/add', upload.single('file'), (req, res) => {
     addTitle(req.body)
-    res.send('Файл успешно загружен!'+PORT);
+    res.send('Файл успешно загружен!');
 });
 app.get('/author/posts/blog', (req, res) => {
     res.json(addData());
+    res.send(PORT);
 });
 
 app.get('/author/posts/blog/download/img', (req, res) => {

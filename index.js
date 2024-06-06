@@ -30,13 +30,13 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage })
 
-const PORT = process.env.PORT || 8080;
-const HOST = 'localhost';
+export const PORT = process.env.PORT || 8080;
+export const HOST = process.env.HOST ||'localhost';
 
 
 app.post('/author/add', upload.single('file'), (req, res) => {
     addTitle(req.body)
-    res.send('Файл успешно загружен!');
+    res.send('Файл успешно загружен!'+PORT);
 });
 app.get('/author/posts/blog', (req, res) => {
     res.json(addData());
